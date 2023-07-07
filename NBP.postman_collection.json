@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "462b6e4a-be70-4ed9-bd62-0633b857dec2",
+		"name": "NBP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4004667"
+	},
+	"item": [
+		{
+			"name": "Calculate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"date\": \"2023-07-07\",\r\n    \"forexRequests\" : [\r\n        {\r\n            \"amount\": 100,\r\n            \"code\": \"USD\"\r\n        },\r\n        {\r\n            \"amount\": 10000,\r\n            \"code\": \"THB\"\r\n        },\r\n        \r\n        {\r\n            \"amount\": 10000,\r\n            \"code\": \"INR\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/exchange-rate/calculate",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exchange-rate",
+						"calculate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FETCH Exchange rate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/exchange-rate?forDate=2023-07-07&code=THB",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exchange-rate"
+					],
+					"query": [
+						{
+							"key": "forDate",
+							"value": "2023-07-07"
+						},
+						{
+							"key": "code",
+							"value": "THB"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
